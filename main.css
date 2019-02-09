@@ -1,14 +1,10 @@
 body {
-  width: 98%;
+  width: 97%;
   display: flex;
   flex-wrap: wrap;
   display: -webkit-flex;
   -webkit-flex-flow: row wrap;
   font-family: 'Open Sans', sans-serif;
-}
-
-.bodySm {
-  width: 97%;
 }
 
 .header_menu {
@@ -75,6 +71,10 @@ h2 {
   width: 100px;
   height: 100px;
   background: #7d97ad;
+}
+
+#linkedin {
+  text-decoration: underline;
 }
 
 .img5 {
