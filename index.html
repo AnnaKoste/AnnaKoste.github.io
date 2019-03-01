@@ -46,6 +46,7 @@
             <li class="nav__item mainM">Main</li>
             <li class="nav__item aboutM">About Me</li>
             <li class="nav__item contactM">Contact details</li>
+            <li class="nav__item projectsM">Projects</li>
           </ul>
           <hr id="line">
         </nav>
@@ -58,7 +59,7 @@
             </picture>
             <h2>Projects</h2>
 
-            <div>
+            <div id='projects'>
               <div class="projects1">
                 <a href="https://annakoste.github.io/memorygame/" target="_blank">
                   <img class="pic" src="images/MatGame.png" alt="Matching Game">Matching Game
@@ -101,18 +102,21 @@
         var mainM = document.querySelector('.mainM');
         var aboutM = document.querySelector('.aboutM');
         var contactM = document.querySelector('.contactM');
+        var projectsM = document.querySelector('.projectsM');
         var mainB = document.getElementById('main');
         var contact = document.getElementById('contact');
         var about = document.getElementById('about');
         var footer = document.querySelector('footer');
 
-        function style(x, y, z) {
+        function style(x, y1, y2, y3) {
             x.style.fontWeight = 'bold';
             x.style.textDecoration = 'underline';
-            y.style.fontWeight = 'normal';
-            y.style.textDecoration = 'none';
-            y.style.fontWeight = 'normal';
-            y.style.textDecoration = 'none';
+            y1.style.fontWeight = 'normal';
+            y1.style.textDecoration = 'none';
+            y2.style.fontWeight = 'normal';
+            y2.style.textDecoration = 'none';
+            y3.style.fontWeight = 'normal';
+            y3.style.textDecoration = 'none';
         }
 
         menu.addEventListener('click', function(e) {
@@ -127,21 +131,29 @@
           footer.removeAttribute('hidden');
           about.setAttribute('hidden', true);
           contact.setAttribute('hidden', true);
-          style(mainM, aboutM, contactM);
+          style(mainM, aboutM, contactM, projectsM);
         });
         aboutM.addEventListener('click', function() {
           about.removeAttribute('hidden');
           mainB.setAttribute('hidden', true);
           contact.setAttribute('hidden', true);
           footer.setAttribute('hidden', true);
-          style(aboutM, mainM, contactM);
+          style(aboutM, mainM, contactM, projectsM);
         });
         contactM.addEventListener('click', function() {
           contact.removeAttribute('hidden');
           about.setAttribute('hidden', true);
           mainB.setAttribute('hidden', true);
           footer.setAttribute('hidden', true);
-          style(contactM, aboutM, mainM);
+          style(contactM, aboutM, mainM, projectsM);
+        });
+        projectsM.addEventListener('click', function() {
+          mainB.removeAttribute('hidden');
+          footer.removeAttribute('hidden');
+          about.setAttribute('hidden', true);
+          contact.setAttribute('hidden', true);
+          style(projectsM, mainM, aboutM, contactM);
+          window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
         });
       </script>
     </body>
