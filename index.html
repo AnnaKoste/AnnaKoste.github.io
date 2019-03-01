@@ -43,11 +43,11 @@
 
         <nav id="drawer" class="nav">
           <ul class="nav__list">
-            <li class="nav__item"><b>Main</b></li>
-            <li class="nav__item"><a href="about.html">About Me</a></li>
-            <li class="nav__item"><a href="contact.html">Contact details</a></li>
-            <li class="nav__item"><a href="#Projects">Projects</a></li>
+            <li class="nav__item mainM">Main</li>
+            <li class="nav__item aboutM">About Me</li>
+            <li class="nav__item contactM">Contact details</li>
           </ul>
+          <hr id="line">
         </nav>
 
         <main>
@@ -58,7 +58,7 @@
             </picture>
             <h2>Projects</h2>
 
-            <div id="Projects">
+            <div>
               <div class="projects1">
                 <a href="https://annakoste.github.io/memorygame/" target="_blank">
                   <img class="pic" src="images/MatGame.png" alt="Matching Game">Matching Game
@@ -76,6 +76,16 @@
               </div>
             </div>
           </div>
+          <div id='about' hidden='true'>
+            <img class="myfoto" src="images/myfoto.jpeg" alt="My foto">
+            <h2>About Me</h2>
+            <p>My name is Anna. I am a Junior Front-End developer.</p>
+            <p>Currently I am live in Singapore but I am from Russia.</p>
+          </div>
+          <div id='contact' hidden='true'>
+            <h2>Contact details</h2>
+            <p>Please reach out to kostechuk.anna@gmail.com or <a id='linkedin' href="https://www.linkedin.com/in/anna-kostechuk-937952163/" target="_blank">linkedin</a>.</p>
+          </div>
           <hr id="line2">
         </main>
       </div>
@@ -88,6 +98,22 @@
         var menu = document.querySelector('#menu');
         var main = document.querySelector('main');
         var drawer = document.querySelector('.nav');
+        var mainM = document.querySelector('.mainM');
+        var aboutM = document.querySelector('.aboutM');
+        var contactM = document.querySelector('.contactM');
+        var mainB = document.getElementById('main');
+        var contact = document.getElementById('contact');
+        var about = document.getElementById('about');
+        var footer = document.querySelector('footer');
+
+        function style(x, y, z) {
+            x.style.fontWeight = 'bold';
+            x.style.textDecoration = 'underline';
+            y.style.fontWeight = 'normal';
+            y.style.textDecoration = 'none';
+            y.style.fontWeight = 'normal';
+            y.style.textDecoration = 'none';
+        }
 
         menu.addEventListener('click', function(e) {
           drawer.classList.toggle('open');
@@ -95,6 +121,27 @@
         });
         main.addEventListener('click', function() {
           drawer.classList.remove('open');
+        });
+        mainM.addEventListener('click', function() {
+          mainB.removeAttribute('hidden');
+          footer.removeAttribute('hidden');
+          about.setAttribute('hidden', true);
+          contact.setAttribute('hidden', true);
+          style(mainM, aboutM, contactM);
+        });
+        aboutM.addEventListener('click', function() {
+          about.removeAttribute('hidden');
+          mainB.setAttribute('hidden', true);
+          contact.setAttribute('hidden', true);
+          footer.setAttribute('hidden', true);
+          style(aboutM, mainM, contactM);
+        });
+        contactM.addEventListener('click', function() {
+          contact.removeAttribute('hidden');
+          about.setAttribute('hidden', true);
+          mainB.setAttribute('hidden', true);
+          footer.setAttribute('hidden', true);
+          style(contactM, aboutM, mainM);
         });
       </script>
     </body>

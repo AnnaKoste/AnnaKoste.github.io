@@ -48,7 +48,7 @@ h2 {
   width: 150px;
   height: 50px;
   float: left;
-  margin-top: 2%;
+  margin-top: 1em;
 }
 
 #square1 {
@@ -139,7 +139,8 @@ a:hover {
   line-height: 24px;
   padding: 15px;
 }
-.nav a, b {
+
+.nav a {
   text-decoration: none;
   color: #424242;
   font-size: 1em;
@@ -148,6 +149,12 @@ a:hover {
 .nav a:hover {
   text-decoration: underline;
   color: #424242;
+  font-weight: bold;
+}
+
+.mainM {
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 #line2 {
