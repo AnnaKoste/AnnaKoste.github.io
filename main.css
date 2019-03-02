@@ -1,11 +1,14 @@
+html {
+  overflow-y: scroll;
+}
+
 body {
-  width: 97%;
+  width: 98%;
   display: flex;
   flex-wrap: wrap;
   display: -webkit-flex;
   -webkit-flex-flow: row wrap;
   font-family: 'Open Sans', sans-serif;
-  overflow: visible;
 }
 
 .header_menu {
@@ -139,6 +142,7 @@ a:hover {
   text-align: center;
   line-height: 24px;
   padding: 15px;
+  cursor: pointer;
 }
 
 .nav a {
